@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Producto - Ferretería Solorza</title>
+    <title>Detalle del Producto - Ferretería Solorza</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,34 +12,36 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <i class="fas fa-hammer"></i>
-                <h1>Ferretería Solorza</h1>
+                <a href="index.html" title="Ir al inicio">
+                    <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png" alt="Logo Ferretería Solorza" class="logo-img">
+                </a>
             </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="index.html#inicio">Inicio</a></li>
-                    <li><a href="index.html#productos">Productos</a></li>
-                    <li><a href="catalogo.html">Catálogo</a></li>
-                    <li><a href="index.html#promociones">Promociones</a></li>
-                    <li><a href="index.html#materiales">Materiales</a></li>
-                    <li><a href="index.html#nosotros">Nosotros</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li>
+                    <li><a href="index.html#inicio"><i class="fas fa-home"></i>Inicio</a></li>
+                    <li><a href="catalogo.html"><i class="fas fa-book"></i>Catálogo</a></li>
+                    <li><a href="hacer-pedido.html"><i class="fas fa-receipt"></i>Hacer Pedido</a></li>
+                    <li><a href="index.html#contacto"><i class="fas fa-address-book"></i>Contacto</a></li>
                 </ul>
             </nav>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
+            <button class="help-btn" title="Cómo hacer tu pedido" aria-label="Ayuda">?</button>
+            <div class="carrito-icon">
+                <a href="hacer-pedido.html" title="Ver mi pedido">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="carrito-contador" class="carrito-contador"></span>
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- Detalle de Producto -->
+    <!-- Detalle del Producto -->
     <section class="producto-detalle-section">
         <div class="container">
             <div class="producto-detalle" id="productoDetalle">
-                <!-- El contenido se cargará dinámicamente con JavaScript -->
-                <div class="loading">
-                    <p>Cargando información del producto...</p>
-                </div>
+                <div class="loading">Cargando información del producto...</div>
             </div>
         </div>
     </section>
@@ -49,7 +51,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Ferretería Solorza</h3>
+                    <h3><a href="index.html" class="brand-link">Ferretería Solorza</a></h3>
                     <p>Todo para tu construcción y reparación</p>
                 </div>
                 <div class="footer-section">
@@ -58,31 +60,82 @@
                         <li><a href="index.html#inicio">Inicio</a></li>
                         <li><a href="index.html#productos">Productos</a></li>
                         <li><a href="catalogo.html">Catálogo</a></li>
-                        <li><a href="index.html#promociones">Promociones</a></li>
-                        <li><a href="index.html#nosotros">Nosotros</a></li>
-                        <li><a href="index.html#contacto">Contacto</a></li>
+                        <li><a href="hacer-pedido.html">Hacer Pedido</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contacto</h3>
-                    <p><i class="fas fa-phone"></i> 618 154 1786</p>
+                    <p class="contact-link"><i class="fab fa-whatsapp"></i> 618 154 1786</p>
                     <p><i class="fas fa-envelope"></i> info@ferreteriasolorza.com</p>
                     <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero, Durango</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Ferretería Solorza. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Ferretería Solorza. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Botón de Soporte Flotante -->
-    <a href="tel:6181541786" class="support-btn" title="Llamar ahora">
-        <i class="fas fa-phone"></i>
-    </a>
-
-    <script src="detalle-producto.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Cargar detalle del producto
+        document.addEventListener('DOMContentLoaded', () => {
+            const productoId = localStorage.getItem('productoSeleccionado');
+            const contenedor = document.getElementById('productoDetalle');
+            
+            if (!productoId) {
+                contenedor.innerHTML = '<div class="loading"><p>No se ha seleccionado ningún producto. <a href="catalogo.html">Ver catálogo</a></p></div>';
+                return;
+            }
+
+            const producto = obtenerProductoPorId(parseInt(productoId));
+            
+            if (!producto) {
+                contenedor.innerHTML = '<div class="loading"><p>Producto no encontrado. <a href="catalogo.html">Ver catálogo</a></p></div>';
+                return;
+            }
+
+            contenedor.innerHTML = `
+                <div class="producto-detalle-img">${producto.imagen || '🔨'}</div>
+                <div class="producto-detalle-info">
+                    <h1>${producto.nombre}</h1>
+                    <div class="precio">$${producto.precio.toFixed(2)}</div>
+                    <div class="stock-info">
+                        <i class="fas fa-check-circle ${producto.stock ? 'in-stock' : 'out-of-stock'}"></i>
+                        <span class="${producto.stock ? 'in-stock' : 'out-of-stock'}">
+                            ${producto.stock ? 'En stock' : 'Agotado'}
+                        </span>
+                    </div>
+                    <div class="descripcion">
+                        <h3>Descripción</h3>
+                        <p>${producto.descripcion}</p>
+                    </div>
+                    <div class="categoria-info">
+                        <strong>Categoría:</strong> ${producto.categoria || 'General'}
+                    </div>
+                    <div class="producto-unidad">${producto.porKilo ? '<strong>Vendido por kilo:</strong> Indica la cantidad en kg' : ''}</div>
+                    ${producto.stock ? `
+                        <div style="margin-top:10px;">
+                            <label for="cantidadInput" style="display:block; margin-bottom:8px; font-weight:600;">Cantidad ${producto.porKilo ? '(kg)' : ''}:</label>
+                            <input id="cantidadInput" type="number" min="${producto.porKilo ? '0.1' : '1'}" step="${producto.porKilo ? '0.1' : '1'}" value="1" style="width:100%; padding:10px; margin-bottom:12px; border-radius:5px; border:1px solid #ddd;" />
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito(${producto.id}, parseFloat(document.getElementById('cantidadInput').value) || 1); window.location.href='hacer-pedido.html';">
+                                <i class="fas fa-shopping-cart"></i> Agregar al Pedido
+                            </button>
+                        </div>
+                    ` : `
+                        <button class="btn-agregar-carrito" disabled>
+                            <i class="fas fa-times"></i> Producto Agotado
+                        </button>
+                    `}
+                    <a href="catalogo.html" class="btn-secondary" style="display: inline-block; margin-top: 15px; text-align: center;">
+                        <i class="fas fa-arrow-left"></i> Volver al Catálogo
+                    </a>
+                </div>
+            `;
+
+            actualizarContadorCarrito();
+            initMobileMenu();
+        });
+    </script>
 </body>
 </html>
-

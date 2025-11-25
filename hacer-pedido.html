@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacer Pedido - Ferretería Solorza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" title="Ir al inicio">
+                    <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png" alt="Logo Ferretería Solorza" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#inicio"><i class="fas fa-home"></i>Inicio</a></li>
+                    <li><a href="catalogo.html"><i class="fas fa-book"></i>Catálogo</a></li>
+                    <li><a href="hacer-pedido.html" class="active"><i class="fas fa-receipt"></i>Hacer Pedido</a></li>
+                    <li><a href="index.html#contacto"><i class="fas fa-address-book"></i>Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <button class="help-btn" title="Cómo hacer tu pedido" aria-label="Ayuda">?</button>
+            <div class="carrito-icon">
+                <a href="hacer-pedido.html" title="Ver mi pedido">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="carrito-contador" class="carrito-contador"></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Pedido -->
+    <section class="pedido-section">
+        <div class="container">
+            <h2 class="section-title">Hacer Pedido</h2>
+            
+            <div class="pedido-container">
+                <!-- Carrito de Pedido -->
+                <div class="pedido-carrito">
+                    <h3>Productos en tu Pedido</h3>
+                    <div id="carritoItems" class="carrito-items">
+                        <p class="carrito-vacio">Tu pedido está vacío. <a href="catalogo.html">Ver productos</a></p>
+                    </div>
+                    <div class="carrito-total">
+                        <strong>Total: $<span id="carritoTotal">0.00</span></strong>
+                    </div>
+                </div>
+
+                <!-- Formulario de Cliente -->
+                <div class="pedido-formulario">
+                    <div class="heading-row">
+                        <h3>Información del Cliente</h3>
+                        <button type="button" class="facturacion-toggle" onclick="toggleFacturacion()">¿Necesitas factura?</button>
+                    </div>
+                    <form id="formularioPedido">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion">Dirección *</label>
+                            <textarea id="direccion" name="direccion" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="comentarios">Comentarios adicionales</label>
+                            <textarea id="comentarios" name="comentarios" rows="3" placeholder="Notas adicionales sobre el pedido..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-enviar-pedido">
+                            <i class="fas fa-paper-plane"></i> Enviar Pedido
+                        </button>
+                    </form>
+                    <!-- Formulario de Facturación -->
+                    <div class="facturacion-wrapper" id="facturacionWrapper">
+                        <h3>Facturación</h3>
+                        <form id="facturacion" class="facturacion-form">
+                            <div class="form-group">
+                                <label for="rfc">RFC / NIF *</label>
+                                <input type="text" id="rfc" name="rfc" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="razon">Razón Social *</label>
+                                <input type="text" id="razon" name="razon" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="correoFactura">Correo para recibir factura *</label>
+                                <input type="email" id="correoFactura" name="correoFactura" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccionFiscal">Dirección fiscal</label>
+                                <textarea id="direccionFiscal" name="direccionFiscal" rows="2"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">Solicitar Factura</button>
+                        </form>
+                        <p class="form-nota">La factura se generará y enviará manualmente al correo indicado. Nos pondremos en contacto si se requiere información adicional.</p>
+                    </div>
+                    <p class="form-nota">
+                        <i class="fas fa-info-circle"></i> 
+                        Este pedido no procesa pago. Nos contactaremos contigo para confirmar disponibilidad y método de pago.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><a href="index.html" class="brand-link">Ferretería Solorza</a></h3>
+                    <p>Todo para tu construcción y reparación</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="index.html#inicio">Inicio</a></li>
+                        <li><a href="index.html#productos">Productos</a></li>
+                        <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="hacer-pedido.html">Hacer Pedido</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p class="contact-link"><i class="fab fa-whatsapp"></i> 618 154 1786</p>
+                    <p><i class="fas fa-envelope"></i> info@ferreteriasolorza.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero, Durango</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ferretería Solorza. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Función para renderizar el carrito
+        function renderizarCarrito() {
+            const carrito = obtenerCarrito();
+            const contenedor = document.getElementById('carritoItems');
+            const totalElement = document.getElementById('carritoTotal');
+
+            if (carrito.length === 0) {
+                contenedor.innerHTML = '<p class="carrito-vacio">Tu pedido está vacío. <a href="catalogo.html">Ver productos</a></p>';
+                if (totalElement) totalElement.textContent = '0.00';
+                return;
+            }
+
+            contenedor.innerHTML = carrito.map(item => {
+                const producto = obtenerProductoPorId(item.id);
+                return `
+                    <div class="carrito-item">
+                        <div class="carrito-item-img">${item.imagen || '🔨'}</div>
+                        <div class="carrito-item-info">
+                            <h4>${item.nombre}</h4>
+                            <p>$${item.precio.toFixed(2)} c/u</p>
+                            <div class="carrito-item-cantidad">
+                                <button onclick="actualizarCantidadCarrito(${item.id}, ${item.cantidad - 1}); renderizarCarrito(); actualizarContadorCarrito();">-</button>
+                                <span>${item.cantidad}</span>
+                                <button onclick="actualizarCantidadCarrito(${item.id}, ${item.cantidad + 1}); renderizarCarrito(); actualizarContadorCarrito();">+</button>
+                            </div>
+                        </div>
+                        <div class="carrito-item-total">
+                            <strong>$${(item.precio * item.cantidad).toFixed(2)}</strong>
+                            <button class="btn-eliminar" onclick="eliminarDelCarrito(${item.id}); renderizarCarrito(); actualizarContadorCarrito();">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const total = obtenerTotalCarrito();
+            if (totalElement) totalElement.textContent = total.toFixed(2);
+        }
+
+        // Manejar envío del formulario
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarCarrito();
+            actualizarContadorCarrito();
+            initMobileMenu();
+
+            const formulario = document.getElementById('formularioPedido');
+            if (formulario) {
+                formulario.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const carrito = obtenerCarrito();
+                    if (carrito.length === 0) {
+                        alert('Tu pedido está vacío. Agrega productos antes de enviar.');
+                        return;
+                    }
+
+                    const datosCliente = {
+                        nombre: document.getElementById('nombre').value,
+                        telefono: document.getElementById('telefono').value,
+                        email: document.getElementById('email').value,
+                        direccion: document.getElementById('direccion').value,
+                        comentarios: document.getElementById('comentarios').value
+                    };
+
+                    if (enviarPedido(datosCliente)) {
+                        alert('¡Pedido enviado exitosamente! Nos contactaremos contigo pronto para confirmar tu pedido.');
+                        formulario.reset();
+                        renderizarCarrito();
+                        actualizarContadorCarrito();
+                    } else {
+                        alert('Hubo un error al enviar el pedido. Por favor intenta de nuevo.');
+                    }
+                });
+            }
+
+            // Manejar formulario de facturación
+            const factForm = document.getElementById('facturacion');
+            if (factForm) {
+                factForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const solicitud = {
+                        id: Date.now(),
+                        fecha: new Date().toISOString(),
+                        rfc: document.getElementById('rfc').value,
+                        razon: document.getElementById('razon').value,
+                        correo: document.getElementById('correoFactura').value,
+                        direccionFiscal: document.getElementById('direccionFiscal').value
+                    };
+
+                    // Guardar solicitud localmente para revisión del administrador
+                    const solicitudes = JSON.parse(localStorage.getItem('facturasSolicitadas') || '[]');
+                    solicitudes.push(solicitud);
+                    localStorage.setItem('facturasSolicitadas', JSON.stringify(solicitudes));
+
+                    alert('Solicitud de factura recibida. Enviaremos la factura al correo indicado.');
+                    factForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>

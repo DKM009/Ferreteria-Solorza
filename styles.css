@@ -6,11 +6,11 @@
 }
 
 :root {
-    --primary-color: #d32f2f;
-    --secondary-color: #f57c00;
+    --primary-color: #1E3A5F; /* azul oscuro */
+    --secondary-color: #FFC107; /* amarillo/dorado */
     --dark-color: #212121;
-    --light-color: #f5f5f5;
-    --text-color: #333;
+    --light-color: #D9D9D9; /* gris claro para fondos */
+    --text-color: #4A4A4A; /* gris oscuro para texto */
     --white: #ffffff;
     --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -36,19 +36,27 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 1rem 0;
-}
+    padding: 0.6rem 0; /* reducir alto del header */
+} 
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* permitir que los elementos se acomoden en pantallas pequeñas */
+    gap: 8px;
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.logo-img {
+    height: 88px; /* aumento ligero para mejor legibilidad */
+    width: 88px;
+    object-fit: contain;
 }
 
 .logo i {
@@ -64,7 +72,16 @@ body {
 .nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav {
+    flex: 1 1 auto;
+}
+
+.nav ul {
+    justify-content: center;
 }
 
 .nav a {
@@ -72,6 +89,47 @@ body {
     color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s;
+}
+
+/* Asegurar que los enlaces del logo no se subrayen */
+.logo a { text-decoration: none; color: inherit; }
+
+/* Estilos para íconos en la navegación */
+.nav a i { margin-right: 8px; color: var(--primary-color); font-size: 0.95rem; opacity: 0.85; }
+
+/* Facturación toggle: estilo minimal pero con botón */
+.facturacion-toggle {
+    background: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 6px 10px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.facturacion-wrapper {
+    display: none;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.facturacion-wrapper.active {
+    display: block;
+}
+
+/* Ajustes para que el header no se vea sobrecargado al quitar el texto */
+.logo h1 { display: none; }
+
+/* Layout for heading and toggle in the pedido form */
+.pedido-formulario .heading-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
 }
 
 .nav a:hover {
@@ -84,12 +142,81 @@ body {
     cursor: pointer;
 }
 
+/* Botón de ayuda (?) en header */
+.help-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+/* Modal de ayuda */
+.help-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.help-modal-overlay.show {
+    display: flex;
+}
+
+.help-modal {
+    background: var(--white);
+    max-width: 720px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: var(--shadow-hover);
+    color: var(--text-color);
+}
+
+.help-modal h3 {
+    margin-bottom: 12px;
+    color: var(--primary-color);
+}
+
+.help-modal .close-help {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #333;
+}
+
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    /* Gradient fallback (se muestra si no hay imagen) */
+    background: linear-gradient(135deg, var(--primary-color) 0%, #162c46 100%);
     color: var(--white);
     padding: 100px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Si se añade la clase `hero--image`, el hero usará una imagen de fondo.
+   Coloca la imagen en `Img/hero.jpg` o cambia la URL según tu archivo.
+   La declaración usa un overlay (linear-gradient) para asegurar legibilidad del texto. */
+.hero.hero--image {
+    background: linear-gradient(rgba(8,20,35,0.45), rgba(8,20,35,0.45)), url('Img/PromocionesEimagenesIMG/inicio.png') center/cover no-repeat;
 }
 
 .hero-content h2 {
@@ -115,12 +242,12 @@ body {
 }
 
 .btn-primary {
-    background: var(--white);
-    color: var(--primary-color);
+    background: var(--secondary-color); /* amarillo/dorado */
+    color: var(--primary-color); /* texto azul para contraste */
 }
 
 .btn-primary:hover {
-    background: var(--light-color);
+    background: #e0a800; /* amarillo más oscuro */
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
 }
@@ -131,7 +258,7 @@ body {
 }
 
 .btn-secondary:hover {
-    background: #b71c1c;
+    background: #162c46; /* azul más oscuro */
     transform: translateY(-2px);
 }
 
@@ -153,7 +280,7 @@ body {
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background: var(--primary-color);
+    background: var(--secondary-color); /* línea decorativa en acento */
 }
 
 /* Carousel de Productos */
@@ -204,7 +331,15 @@ body {
     justify-content: center;
     margin-bottom: 15px;
     font-size: 3rem;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* icono destacado en acento */
+    overflow: hidden;
+}
+
+.producto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .producto-info h3 {
@@ -221,14 +356,22 @@ body {
 .producto-precio {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* precios en acento */
+    margin-bottom: 10px;
+}
+.producto-unidad {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+    display: block;
+    margin-top: -10px;
     margin-bottom: 10px;
 }
 
 .btn-ver-detalle {
     width: 100%;
     padding: 10px;
-    background: var(--primary-color);
+    background: var(--primary-color); /* botón primario en azul */
     color: var(--white);
     border: none;
     border-radius: 5px;
@@ -238,7 +381,7 @@ body {
 }
 
 .btn-ver-detalle:hover {
-    background: #b71c1c;
+    background: #162c46; /* azul más oscuro */
 }
 
 .carousel-btn {
@@ -259,7 +402,7 @@ body {
 }
 
 .carousel-btn:hover {
-    background: #b71c1c;
+    background: var(--secondary-color); /* hover en acento */
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -284,7 +427,7 @@ body {
 
 .promociones-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
@@ -293,10 +436,19 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s;
+    min-height: 400px;
+    display: flex;
 }
 
 .promocion-card:hover {
     transform: scale(1.05);
+}
+
+.promocion-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .promocion-placeholder {
@@ -354,6 +506,14 @@ body {
     margin-bottom: 10px;
 }
 
+/* Imágenes dentro de material-card: mantener proporción y cubrir área sin estirar */
+.material-card img {
+    width: 100%;
+    height: 250px; /* mismo alto que el placeholder anterior */
+    object-fit: cover; /* recorta si es necesario, mantiene proporciones */
+    display: block;
+}
+
 /* Nosotros */
 .nosotros-section {
     padding: 80px 20px;
@@ -389,7 +549,7 @@ body {
 
 .info-card i {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* iconos destacados en acento */
     margin-bottom: 15px;
 }
 
@@ -457,7 +617,7 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--dark-color);
+    background: #4A4A4A;
     color: var(--white);
     padding: 40px 20px 20px;
 }
@@ -474,6 +634,12 @@ body {
     color: var(--primary-color);
 }
 
+/* Hacer los títulos "Enlaces" y "Contacto" amarillos */
+.footer-section:nth-child(2) h3,
+.footer-section:nth-child(3) h3 {
+    color: var(--secondary-color);
+}
+
 .footer-section ul {
     list-style: none;
 }
@@ -488,8 +654,18 @@ body {
     transition: color 0.3s;
 }
 
+/* Destacar nombre y contacto en footer con color secundario (coherente) */
+.footer .brand-link {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+.footer .contact-link {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
 .footer-section a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color); /* hover enlaces en acento */
 }
 
 .footer-section p {
@@ -498,7 +674,7 @@ body {
 
 .footer-section i {
     margin-right: 10px;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* iconos destacados en acento */
 }
 
 .footer-bottom {
@@ -514,7 +690,7 @@ body {
     right: 30px;
     width: 60px;
     height: 60px;
-    background: #25d366;
+    background: var(--secondary-color); /* botón flotante en acento */
     color: var(--white);
     border-radius: 50%;
     display: flex;
@@ -528,20 +704,25 @@ body {
     animation: pulse 2s infinite;
 }
 
+.support-btn i.fab.fa-whatsapp {
+    font-size: 2rem; /* Ajuste para el ícono de WhatsApp */
+    color: var(--white);
+}
+
 .support-btn:hover {
     transform: scale(1.1);
-    background: #20ba5a;
+    background: #e0a800; /* acento más oscuro */
 }
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
     }
     70% {
-        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+        box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
     }
 }
 
@@ -663,9 +844,16 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 5rem;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* icono destacado en acento */
     box-shadow: var(--shadow);
 }
+.producto-detalle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    border-radius: 10px; /* Mantiene los bordes redondeados */
+}
+
 
 .producto-detalle-info h1 {
     font-size: 2.5rem;
@@ -675,7 +863,7 @@ body {
 
 .producto-detalle-info .precio {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--secondary-color); /* precio en acento */
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -708,7 +896,7 @@ body {
 .btn-agregar-carrito {
     width: 100%;
     padding: 15px;
-    background: var(--primary-color);
+    background: var(--secondary-color); /* botón de acción en acento */
     color: var(--white);
     border: none;
     border-radius: 5px;
@@ -719,7 +907,7 @@ body {
 }
 
 .btn-agregar-carrito:hover {
-    background: #b71c1c;
+    background: #e0a800; /* acento más oscuro */
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
 }
@@ -753,3 +941,332 @@ body {
     display: block;
 }
 
+/* Estilos para Carrito Icon */
+.carrito-icon {
+    position: relative;
+    margin-left: 20px;
+}
+
+.carrito-icon a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    text-decoration: none;
+    position: relative;
+}
+
+.carrito-contador {
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    background: var(--secondary-color);
+    color: var(--primary-color); /* Texto más oscuro para mejor contraste */
+    border-radius: 50%;
+    width: 28px; /* Tamaño aumentado */
+    height: 28px; /* Tamaño aumentado */
+    font-size: 1rem; /* Fuente aumentada */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: 2px solid var(--white); /* Borde para separarlo del ícono */
+    display: none;
+}
+
+/* Estilos para Catálogo */
+.catalogo-section {
+    padding: 80px 20px;
+    background: var(--light-color);
+    min-height: 70vh;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.btn-agregar-pedido {
+    width: 100%;
+    padding: 10px;
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-agregar-pedido:hover {
+    background: #e0a800;
+}
+
+/* Estilos para Pedidos */
+.pedido-section {
+    padding: 80px 20px;
+    background: var(--light-color);
+    min-height: 70vh;
+}
+
+.pedido-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.instrucciones-pedido {
+    background: #e7f3ff;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    border: 1px solid #b3d7ff;
+}
+
+.instrucciones-pedido h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+
+.pedido-carrito,
+.pedido-formulario {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.pedido-carrito h3,
+.pedido-formulario h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.carrito-items {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.carrito-vacio {
+    text-align: center;
+    color: #666;
+    padding: 40px;
+}
+
+.carrito-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid var(--light-color);
+    align-items: center;
+}
+
+.carrito-item:last-child {
+    border-bottom: none;
+}
+
+.carrito-item-img {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-color);
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.carrito-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.carrito-item-info {
+    flex: 1;
+}
+
+.carrito-item-info h4 {
+    margin-bottom: 5px;
+    color: var(--dark-color);
+}
+
+.carrito-item-info p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.carrito-item-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carrito-item-cantidad button {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.carrito-item-cantidad button:hover {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+}
+
+.carrito-item-cantidad span {
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+.carrito-item-total {
+    text-align: right;
+}
+
+.btn-eliminar {
+    background: #dc3545;
+    color: var(--white);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.btn-eliminar:hover {
+    background: #c82333;
+}
+
+.carrito-total {
+    text-align: right;
+    padding-top: 20px;
+    border-top: 2px solid var(--light-color);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Formulario de Pedido */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-nota {
+    margin-top: 20px;
+    padding: 15px;
+    background: #e7f3ff;
+    border-radius: 5px;
+    color: #004085;
+    font-size: 0.9rem;
+}
+
+.facturacion-wrapper { margin-top: 30px; }
+
+.btn-enviar-pedido {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+.btn-enviar-pedido:hover {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+}
+
+.categoria-info {
+    margin-bottom: 20px;
+    color: #666;
+}
+/* Estilos para Facturación */
+.facturacion-section {
+    padding: 80px 20px;
+    background: var(--light-color);
+    min-height: 70vh;
+}
+
+.facturacion-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.facturacion-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pedido-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .catalogo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .producto-detalle {
+        grid-template-columns: 1fr;
+    }
+    
+    .header .container {
+        flex-wrap: wrap;
+    }
+    
+    .carrito-icon {
+        order: 3;
+        margin-left: auto;
+    }
+}

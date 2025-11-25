@@ -12,27 +12,35 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <i class="fas fa-hammer"></i>
-                <h1>Ferretería Solorza</h1>
+                <a href="index.html" title="Ir al inicio">
+                    <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png" alt="Logo Ferretería Solorza" class="logo-img">
+                </a>
+                <h1><a href="index.html" class="brand-link" title="Ir al inicio">Ferretería Solorza</a></h1>
             </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#productos">Productos</a></li>
-                    <li><a href="#promociones">Promociones</a></li>
-                    <li><a href="#materiales">Materiales</a></li>
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="index.html#inicio"><i class="fas fa-home"></i>Inicio</a></li>
+                    <li><a href="catalogo.html"><i class="fas fa-book"></i>Catálogo</a></li>
+                    <li><a href="hacer-pedido.html"><i class="fas fa-receipt"></i>Hacer Pedido</a></li>
+                    <li><a href="#nosotros"><i class="fas fa-users"></i>Nosotros</a></li>
+                    <li><a href="#contacto"><i class="fas fa-address-book"></i>Contacto</a></li>
                 </ul>
             </nav>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
+            <button class="help-btn" title="Cómo hacer tu pedido" aria-label="Ayuda">?</button>
+            <div class="carrito-icon">
+                <a href="hacer-pedido.html">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="carrito-contador" class="carrito-contador"></span>
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero">
+    <section id="inicio" class="hero hero--image">
         <div class="hero-content">
             <h2>Bienvenido a Ferretería Solorza</h2>
             <p>Todo lo que necesitas en herramientas y materiales de construcción</p>
@@ -63,6 +71,8 @@
 
     <div class="view-all">
       <a href="catalogo.html" class="btn-secondary">Ver Todos los Productos</a>
+      
+      <a href="hacer-pedido.html" class="btn-primary" style="margin-left: 15px;"><i class="fas fa-shopping-cart"></i> Hacer Pedido</a>
     </div>
   </div>
 </section>
@@ -74,28 +84,13 @@
             <h2 class="section-title">Promociones Especiales</h2>
             <div class="promociones-grid">
                 <div class="promocion-card">
-                    <div class="promocion-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Imagen de promoción</p>
-                    </div>
+                    <img src="Img/PromocionesEimagenesIMG/2.png" alt="Promoción 2">
                 </div>
                 <div class="promocion-card">
-                    <div class="promocion-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Imagen de promoción</p>
-                    </div>
+                    <img src="Img/PromocionesEimagenesIMG/3.png" alt="Promoción 3">
                 </div>
                 <div class="promocion-card">
-                    <div class="promocion-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Imagen de promoción</p>
-                    </div>
-                </div>
-                <div class="promocion-card">
-                    <div class="promocion-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Imagen de promoción</p>
-                    </div>
+                    <img src="Img/PromocionesEimagenesIMG/4.png" alt="Promoción 4">
                 </div>
             </div>
         </div>
@@ -104,43 +99,22 @@
     <!-- Materiales -->
     <section id="materiales" class="materiales-section">
         <div class="container">
-            <h2 class="section-title">Materiales que Manejamos la Ferretería</h2>
+            <h2 class="section-title">Materiales de construcción</h2>
             <div class="materiales-grid">
                 <div class="material-card">
-                    <div class="material-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Imagen de material</p>
-                    </div>
+                    <img src="Img/ImgConstruccion/MaterialConstrucionBarilla.png" alt="Barilla - Material de construcción">
                 </div>
                 <div class="material-card">
-                    <div class="material-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Imagen de material</p>
-                    </div>
+                    <img src="Img/ImgConstruccion/MaterialConstrucionCemento.jpg" alt="Cemento - Material de construcción">
                 </div>
                 <div class="material-card">
-                    <div class="material-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Imagen de material</p>
-                    </div>
+                    <img src="Img/ImgConstruccion/MaterialConstrucionMultiplast.png" alt="Multiplast - Material de construcción">
                 </div>
                 <div class="material-card">
-                    <div class="material-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Imagen de material</p>
-                    </div>
+                    <img src="Img/ImgConstruccion/MaterialConstrucionPvc.jpg" alt="PVC - Material de construcción">
                 </div>
                 <div class="material-card">
-                    <div class="material-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Imagen de material</p>
-                    </div>
-                </div>
-                <div class="material-card">
-                    <div class="material-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Imagen de material</p>
-                    </div>
+                    <img src="Img/ImgConstruccion/MateriConstruccionMortero.png" alt="Mortero - Material de construcción">
                 </div>
             </div>
         </div>
@@ -153,7 +127,7 @@
             <div class="nosotros-content">
                 <div class="nosotros-text">
                     <p>Ferretería Solorza es una empresa dedicada a ofrecer productos de ferretería en general, incluyendo herramientas, materiales de construcción y todo lo necesario para tus proyectos.</p>
-                    <p>Nos especializamos en brindar calidad y servicio a nuestros clientes, ofreciendo una amplia variedad de productos para satisfacer todas sus necesidades de construcción y reparación.</p>
+                    <p>Nos especializamos en brindar calidad y servicio a nuestros clientes, ofreciendo una amplia variedad de productos para satisfacer todas sus necesidades de construcción y reparación 25 años de experiencia en el rubro.</p>
                 </div>
                 <div class="nosotros-info">
                     <div class="info-card">
@@ -162,9 +136,9 @@
                         <p>Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero, Durango</p>
                     </div>
                     <div class="info-card">
-                        <i class="fas fa-phone"></i>
-                        <h3>Teléfono</h3>
-                        <p><a href="tel:6181541786">618 154 1786</a></p>
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/5216181541786" target="_blank" rel="noopener noreferrer">618 154 1786</a></p>
                     </div>
                     <div class="info-card">
                         <i class="fas fa-envelope"></i>
@@ -184,7 +158,7 @@
                 <div class="contacto-info">
                     <h3>Información de Contacto</h3>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
+                        <i class="fab fa-whatsapp"></i>
                         <span>618 154 1786</span>
                     </div>
                     <div class="contact-item">
@@ -197,7 +171,7 @@
                     </div>
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.234567890123!2d-103.987654321!3d25.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDA3JzI0LjQiTiAxMDPCsDU5JzE1LjUiVw!5e0!3m2!1ses!2smx!4v1234567890123!5m2!1ses!2smx" 
+                            src="https://www.google.com/maps/embed?pb=!4v1762874138358!6m8!1m7!1sVntJxEQm7fYUi4D5uj1I7g!2m2!1d23.72705085673979!2d-103.9810487939393!3f142.40510776138296!4f0.9515165712242322!5f0.7820865974627469"
                             width="100%" 
                             height="300" 
                             style="border:0;" 
@@ -215,7 +189,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Ferretería Solorza</h3>
+                    <h3><a href="index.html" class="brand-link">Ferretería Solorza</a></h3>
                     <p>Todo para tu construcción y reparación</p>
                 </div>
                 <div class="footer-section">
@@ -230,7 +204,7 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contacto</h3>
-                    <p><i class="fas fa-phone"></i> 618 154 1786</p>
+                    <p class="contact-link"><i class="fab fa-whatsapp"></i> 618 154 1786</p>
                     <p><i class="fas fa-envelope"></i> info@ferreteriasolorza.com</p>
                     <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero, Durango</p>
                 </div>
@@ -242,11 +216,16 @@
     </footer>
 
     <!-- Botón de Soporte Flotante -->
-     <a href="tel:6181541786" class="support-btn" title="Llamar ahora">
-        <i class="fas fa-phone"></i>
+     <a href="https://wa.me/5216181541786" class="support-btn" title="Enviar mensaje por WhatsApp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="script.js"></script>
+    <script>
+        // Actualizar contador de carrito al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            actualizarContadorCarrito();
+        });
+    </script>
 </body>
 </html> 
-

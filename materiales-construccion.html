@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Productos - Ferretería Solorza</title>
+    <title>Materiales para Construcción - Ferretería Solorza</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -14,12 +14,13 @@
             <div class="logo">
                 <a href="index.html" title="Ir al inicio">
                     <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png" alt="Logo Ferretería Solorza" class="logo-img">
+                    <h1>Ferretería Solorza</h1>
                 </a>
             </div>
             <nav class="nav">
                 <ul>
                     <li><a href="index.html#inicio"><i class="fas fa-home"></i>Inicio</a></li>
-                    <li><a href="catalogo.html" class="active"><i class="fas fa-book"></i>Catálogo</a></li>
+                    <li><a href="catalogo.html"><i class="fas fa-book"></i>Catálogo</a></li>
                     <li><a href="hacer-pedido.html"><i class="fas fa-receipt"></i>Hacer Pedido</a></li>
                     <li><a href="index.html#contacto"><i class="fas fa-address-book"></i>Contacto</a></li>
                 </ul>
@@ -37,18 +38,13 @@
         </div>
     </header>
 
-    <!-- Catálogo de Productos -->
+    <!-- Materiales de Construcción -->
     <section class="catalogo-section">
         <div class="container">
-            <h2 class="section-title">Todos los Productos</h2>
-            <p class="section-subtitle">Herramientas y accesorios para construcción y reparación</p>
+            <h2 class="section-title">Materiales para Construcción</h2>
+            <p class="section-subtitle">Cemento, varilla, Armex, cal, yeso y más materiales de construcción</p>
             
-            <div class="categoria-buttons" id="categoriaButtons" style="text-align:center; margin-bottom:20px; display:flex; gap:10px; justify-content:center;">
-                <button class="btn-secondary" data-cat="all"><i class="fas fa-th-large"></i> Todos</button>
-                <button class="btn-secondary" data-cat="herramientas"><i class="fas fa-tools"></i> Herramientas</button>
-            </div>
-
-            <div class="catalogo-grid" id="catalogoGrid">
+            <div class="catalogo-grid" id="materialesGrid">
                 <!-- Los productos se cargarán dinámicamente -->
             </div>
         </div>
@@ -59,7 +55,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                        <h3><a href="index.html" class="brand-link">Ferretería Solorza</a></h3>
+                    <h3><a href="index.html" class="brand-link">Ferretería Solorza</a></h3>
                     <p>Todo para tu construcción y reparación</p>
                 </div>
                 <div class="footer-section">
@@ -68,12 +64,13 @@
                         <li><a href="index.html#inicio">Inicio</a></li>
                         <li><a href="index.html#productos">Productos</a></li>
                         <li><a href="catalogo.html">Catálogo</a></li>
+                        <li><a href="materiales-construccion.html">Materiales</a></li>
                         <li><a href="hacer-pedido.html">Hacer Pedido</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                        <h3>Contacto</h3>
-                        <p class="contact-link"><i class="fab fa-whatsapp"></i> 618 154 1786</p>
+                    <h3>Contacto</h3>
+                    <p class="contact-link"><i class="fab fa-whatsapp"></i> 618 154 1786</p>
                     <p><i class="fas fa-envelope"></i> info@ferreteriasolorza.com</p>
                     <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero, Durango</p>
                 </div>
@@ -86,26 +83,12 @@
 
     <script src="script.js"></script>
     <script>
-        // Cargar productos del catálogo y manejar botones de categoría
+        // Cargar productos de materiales de construcción
         document.addEventListener('DOMContentLoaded', () => {
-            const allProducts = productos || [];
-            // Mostrar todos por defecto
-            renderizarProductos(allProducts, 'catalogoGrid');
+            const materialesConstruccion = filtrarProductosPorCategoria('materiales-construccion');
+            renderizarProductos(materialesConstruccion, 'materialesGrid');
             actualizarContadorCarrito();
             initMobileMenu();
-
-            // Configurar botones de categoría
-            const botones = document.querySelectorAll('#categoriaButtons button');
-            botones.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const cat = btn.dataset.cat;
-                    if (cat === 'all') {
-                        renderizarProductos(allProducts, 'catalogoGrid');
-                    } else {
-                        renderizarProductos(filtrarProductosPorCategoria(cat), 'catalogoGrid');
-                    }
-                });
-            });
         });
     </script>
 </body>
