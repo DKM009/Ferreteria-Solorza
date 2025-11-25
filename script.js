@@ -69,11 +69,12 @@ const productos = [
         id: 7,
         nombre: 'Carretilla Truper',
         categoria: 'herramientas',
+        marca: 'truper',
         descripcion: 'Carretilla marca Truper de alta calidad y resistencia. Ideal para transportar materiales de construcción, tierra, arena y escombros. Fabricada con materiales duraderos que soportan cargas pesadas. Rueda reforzada y estructura robusta para trabajos exigentes.',
         descripcionCorta: 'Carretilla resistente para materiales de construcción',
         precio: 1350.00,
         stock: true,
-        imagen: '<img src="Img/ProductosIMG/Imagen%20de%20WhatsApp%202025-11-17%20a%20las%2017.41.51_3e6a5e9a.jpg" alt="Producto catálogo 03">'
+        imagen: '<img src="Img/ProductosIMG/TruperCarretilla.jpg" alt="Carretilla Truper">'
     },
     {
         id: 8,
@@ -121,11 +122,12 @@ const productos = [
         id: 12,
         nombre: 'Pinzas para cortar cable',
         categoria: 'herramientas',
+        marca: 'truper',
         descripcion: 'Pinzas cortacables profesionales de alta resistencia. Herramienta especializada para cortar cables eléctricos de diferentes calibres. Mango ergonómico y cuchillas afiladas de acero templado. Ideal para electricistas y trabajos de instalación eléctrica.',
         descripcionCorta: 'Pinzas profesionales para cortar cables',
         precio: 180.00,
         stock: true,
-        imagen: '<img src="Img/ProductosIMG/Imagen%20de%20WhatsApp%202025-11-17%20a%20las%2017.41.52_2d8d247b.jpg" alt="Producto catálogo 08">'
+        imagen: '<img src="Img/ProductosIMG/PinsasTruper.jpg" alt="Pinzas Truper">'
     },
     {
         id: 13,
@@ -151,21 +153,23 @@ const productos = [
         id: 15,
         nombre: 'Pico Truper',
         categoria: 'herramientas',
+        marca: 'truper',
         descripcion: 'Pico marca Truper de alta calidad y durabilidad. Herramienta esencial para excavación, rompimiento de tierra dura y trabajos de construcción. Mango ergonómico y cabeza de acero templado resistente. Ideal para trabajos de albañilería, jardinería y construcción.',
         descripcionCorta: 'Pico resistente para excavación y construcción',
         precio: 480.00,
         stock: true,
-        imagen: '<img src="Img/ProductosIMG/Imagen%20de%20WhatsApp%202025-11-17%20a%20las%2017.41.52_545ed2ae.jpg" alt="Producto catálogo 11">'
+        imagen: '<img src="Img/ProductosIMG/PicoTruper.jpg" alt="Pico Truper">'
     },
     {
         id: 16,
         nombre: 'Palas Truper',
         categoria: 'herramientas',
+        marca: 'truper',
         descripcion: 'Palas marca Truper de excelente calidad y resistencia. Herramienta versátil para cavar, mover tierra, arena y materiales de construcción. Mango ergonómico y hoja de acero resistente. Disponible en diferentes tamaños según tus necesidades de trabajo.',
         descripcionCorta: 'Palas resistentes para construcción y jardinería',
         precio: 320.00,
         stock: true,
-        imagen: '<img src="Img/ProductosIMG/Imagen%20de%20WhatsApp%202025-11-17%20a%20las%2017.41.52_ebc2bf42.jpg" alt="Producto catálogo 12">'
+        imagen: '<img src="Img/ProductosIMG/PalasTruper.jpg" alt="Palas Truper">'
     },
     {
         id: 17,
@@ -181,32 +185,35 @@ const productos = [
         id: 18,
         nombre: 'Mangera de 1/2 truper',
         categoria: 'materiales-construccion',
+        marca: 'truper',
         descripcion: 'Manguera de media pulgada (1/2") marca Truper de alta calidad. Resistente a la presión y condiciones climáticas. Ideal para sistemas de riego, conexiones de agua y trabajos de plomería. Material duradero que garantiza larga vida útil.',
         descripcionCorta: 'Manguera de 1/2" resistente y duradera',
         precio: 260.00,
         stock: true,
-        imagen: '<img src="Img/ProductosIMG/Imagen%20de%20WhatsApp%202025-11-17%20a%20las%2017.41.53_70f24c83.jpg" alt="Producto catálogo 14">'
+        imagen: '<img src="Img/ProductosIMG/MangueradeaguaTruper.jpg" alt="Manguera de 1/2 Truper">'
     },
     {
         id: 19,
         nombre: 'Juego de matraca',
         categoria: 'herramientas',
+        marca: 'pretul',
         descripcion: 'Juego completo de matraca (llave de trinquete) con múltiples tamaños de sockets. Herramienta versátil para apretar y aflojar tornillos y tuercas. Incluye diferentes medidas para cubrir diversas necesidades. Ideal para mecánicos, técnicos y trabajos de reparación.',
         descripcionCorta: 'Juego completo de matraca con sockets',
         precio: 150.00,
         stock: true,
-        imagen: '<img src="Img/ProductosIMG/Imagen%20de%20WhatsApp%202025-11-17%20a%20las%2017.41.53_8742182d.jpg" alt="Producto catálogo 15">'
+        imagen: '<img src="Img/ProductosIMG/JuegodematracaPretul.jpg" alt="Juego de matraca Pretul">'
     },
-    {
+    /*{
         id: 20,
         nombre: 'Bultos de cemento 50 kg',
         categoria: 'materiales-construccion',
+        marca: 'cemex',
         descripcion: 'Bultos de cemento de alta calidad para construcción. Material esencial para trabajos de albañilería, mezclas de concreto y proyectos de construcción. Cemento de excelente resistencia y durabilidad, garantizando estructuras sólidas y duraderas.',
         descripcionCorta: 'Cemento Monterrey para construcción',
         precio: 232.00,
         stock: true,
-        imagen: '<img src="Img/ProductosIMG/Imagen%20de%20WhatsApp%202025-11-17%20a%20las%2017.41.53_e8ea7b3f.jpg" alt="Producto catálogo 16">'
-    },
+        imagen: '<img src="Img/ImgConstruccion/MaterialConstrucionCementoCemex.jpg" alt="Bultos de Cemento">'
+    },*/
     {
         id: 21,
         nombre: 'Esmeriladora de banco',
@@ -231,11 +238,12 @@ const productos = [
         id: 23,
         nombre: 'Tuberia pvc',
         categoria: 'materiales-construccion',
+        marca: 'cemex',
         descripcion: 'Tubería de PVC de alta calidad para instalaciones de plomería y sistemas de agua. Material resistente, ligero y duradero. Ideal para conducciones de agua potable, drenaje y sistemas de riego. Disponible en diferentes diámetros y longitudes.',
         descripcionCorta: 'Tubería PVC para instalaciones de plomería',
         precio: 190.00,
         stock: true,
-        imagen: '<img src="Img/ProductosIMG/Imagen%20de%20WhatsApp%202025-11-17%20a%20las%2017.41.54_de22ad31.jpg" alt="Producto catálogo 19">'
+        imagen: '<img src="Img/ImgConstruccion/MaterialConstrucionPvc.jpg" alt="Tubería PVC">'
     },
     {
         id: 24,
@@ -249,25 +257,27 @@ const productos = [
     },
     {
         id: 25,
-        nombre: 'Armex',
+        nombre: 'Cemento Monterrey',
         categoria: 'materiales-construccion',
-        descripcion: 'Malla electrosoldada Armex de alta calidad para refuerzo de concreto. Material esencial en construcción para losas, muros y elementos estructurales. Fabricada con acero de alta resistencia que garantiza durabilidad y seguridad en las construcciones.',
-        descripcionCorta: 'Malla electrosoldada para refuerzo de concreto',
+        marca: 'cemex',
+        descripcion: 'Cemento Monterrey de alta calidad para construcción. Material esencial para trabajos de albañilería, mezclas de concreto y proyectos de construcción. Cemento de excelente resistencia y durabilidad, garantizando estructuras sólidas y duraderas.',
+        descripcionCorta: 'Cemento Monterrey para construcción',
         precio: 450.00,
         stock: true,
-        imagen: '🔨'
+        imagen: '<img src="Img/ImgConstruccion/MaterialConstrucionCementoCemex.jpg" alt="Cemento Monterrey">'
     },
     {
         id: 26,
         nombre: 'Varilla corrugada',
         categoria: 'materiales-construccion',
+        marca: 'cemex',
         descripcion: 'Varilla corrugada de acero de alta calidad para refuerzo estructural en construcción. Disponible en diferentes calibres según las necesidades del proyecto. Material esencial para la construcción de losas, vigas, columnas y muros de concreto reforzado.',
         descripcionCorta: 'Varilla de acero para refuerzo estructural',
         precio: 180.00,
         stock: true,
-        imagen: '⚙️'
+        imagen: '<img src="Img/ImgConstruccion/MaterialConstrucionBarilla.png" alt="Varilla Corrugada">'
     },
-    {
+    /*{
         id: 27,
         nombre: 'Cal',
         categoria: 'materiales-construccion',
@@ -275,7 +285,7 @@ const productos = [
         descripcionCorta: 'Cal hidratada para mezclas de construcción',
         precio: 85.00,
         stock: true,
-        imagen: '🧱'
+        imagen: '<img src="Img/ImgConstruccion/MaterialConstrucionPvc.jpg" alt="Cal Hidratada">'
     },
     {
         id: 28,
@@ -285,17 +295,29 @@ const productos = [
         descripcionCorta: 'Yeso para acabados y enjarres',
         precio: 95.00,
         stock: true,
-        imagen: '🏗️'
-    },
+        imagen: '<img src="Img/ImgConstruccion/MaterialConstrucionMultiplastCemex.png" alt="Yeso">'
+    },*/
     {
         id: 29,
-        nombre: 'Cemento blanco',
+        nombre: 'Multiplast Cemex',
         categoria: 'materiales-construccion',
-        descripcion: 'Cemento blanco de alta calidad para acabados especiales y decorativos. Ideal para proyectos que requieren acabados blancos o coloreados. Perfecto para pisos, fachadas y elementos arquitectónicos decorativos.',
-        descripcionCorta: 'Cemento blanco para acabados decorativos',
+        marca: 'cemex',
+        descripcion: 'Multiplast Cemex de alta calidad para acabados especiales y decorativos. Ideal para proyectos que requieren acabados de calidad. Perfecto para pisos, fachadas y elementos arquitectónicos decorativos.',
+        descripcionCorta: 'Multiplast Cemex para acabados',
         precio: 280.00,
         stock: true,
-        imagen: '⚪'
+        imagen: '<img src="Img/ImgConstruccion/MaterialConstrucionMultiplastCemex.png" alt="Multiplast Cemex">'
+    },
+    {
+        id: 30,
+        nombre: 'Mescladora Foset',
+        categoria: 'herramientas',
+        marca: 'foset',
+        descripcion: 'Mezcladora de agua para fregadero marca Foset. Cuello de zinc resistente con llave plata para cocina de 8". Grifo de 2 manerales para control de agua fría y caliente. Material durable con cartucho cerámico de alta calidad. Acabado cromo de larga durabilidad. Ideal para cocinas modernas y durables.',
+        descripcionCorta: 'Mezcladora de agua para fregadero con 2 manerales',
+        precio: 1200.00,
+        stock: true,
+        imagen: '<img src="Img/ProductosIMG/fosetMescladora.png" alt="Mescladora Foset">'
     },
     /*{
         id: 6,
@@ -813,5 +835,11 @@ function enviarPedido(datosCliente) {
 
     // Guardar también para administración (lista de todos los pedidos)
     return true;
+}
+
+// Función para filtrar productos por marca
+function filtrarProductosPorMarca(marca) {
+    if (!productos || productos.length === 0) return [];
+    return productos.filter(p => p.marca && p.marca.toLowerCase() === marca.toLowerCase());
 }
 
