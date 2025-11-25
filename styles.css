@@ -955,22 +955,28 @@ body {
 }
 
 .carrito-contador {
+   
     position: absolute;
     top: -10px;
     right: -12px;
     background: var(--secondary-color);
-    color: var(--primary-color); /* Texto más oscuro para mejor contraste */
+    color: var(--primary-color);
     border-radius: 50%;
-    width: 28px; /* Tamaño aumentado */
-    height: 28px; /* Tamaño aumentado */
-    font-size: 1rem; /* Fuente aumentada */
+    padding: 3px 6px;  /* Se adapta al número */
+    font-size: 0.75rem;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
-    border: 2px solid var(--white); /* Borde para separarlo del ícono */
-    display: none;
+    border: 2px solid var(--white);
+    min-width: 20px;   /* Evita que el 1 se vea demasiado pequeño */
+    height: 20px;      /* Mantiene forma circular */
+    line-height: 1;
 }
+
+
+
+
 
 /* Estilos para Catálogo */
 .catalogo-section {
