@@ -1,50 +1,50 @@
 // Datos de productos
 const productos = [
-   /* {
-        id: 1,
-        nombre: 'Armex',
-        descripcion: 'Material de construcción versátil y resistente, ideal para trabajos de albañilería y construcción. El Armex es un material esencial en cualquier proyecto de construcción, conocido por su durabilidad y versatilidad.',
-        descripcionCorta: 'Material de construcción versátil y resistente',
-        precio: 450.00,
-        stock: true,
-        imagen: '🔨'
-    },
-    {
-        id: 1,
-        nombre: 'Careta para soldar',
-        descripcion: 'Careta de soldador de alta calidad.',
-        descripcionCorta: 'Careta de soldador de alta calidad.',
-        precio: 380.00,
-        stock: true,
-        imagen: '<img src="Img/Imagen%20de%20WhatsApp%202025-11-11%20a%20las%2009.26.10_e54b7e24.jpg" alt="Careta para soldar">'
-    },
-    {
-        id: 2,
-        nombre: 'Esmeriladora',
-        descripcion: 'Esmeriladora de alta calidad, ideal para cortar, pulir y desbastar materiales metálicos. Potente motor que permite trabajos eficientes en talleres y proyectos de construcción.',
-        descripcionCorta: 'Esmeriladora de alta calidad para cortar y pulir',
-        precio: 250.00,
-        stock: true,
-        imagen: '<img src="Img/Imagen%20de%20WhatsApp%202025-11-11%20a%20las%2009.26.11_844b4aa8.jpg" alt="Esmeriladora">'
-    },
-    {
-        id: 3,
-        nombre: 'Bolsa de grapas para alambre de púas',
-        descripcion: 'Bolsa de grapas especiales para alambre de púas. Grapas de alta resistencia y durabilidad, ideales para cercas y trabajos de seguridad perimetral. Material de calidad que garantiza sujeción firme y duradera.',
-        descripcionCorta: 'Grapas especiales para alambre de púas',
-        precio: 320.00,
-        stock: true,
-        imagen: '<img src="Img/Imagen%20de%20WhatsApp%202025-11-11%20a%20las%2009.26.11_37950bca.jpg" alt="Bolsa de grapas para alambre de púas">'
-    },
-    {
-        id: 4,
-        nombre: 'Rotomartillo',
-        descripcion: 'Rotomartillo profesional de alta potencia, ideal para perforar concreto, mampostería y materiales duros. Herramienta versátil con múltiples velocidades y funciones de percusión para trabajos de construcción y remodelación.',
-        descripcionCorta: 'Rotomartillo profesional de alta potencia',
-        precio: 180.00,
-        stock: true,
-        imagen: '<img src="Img/Imagen%20de%20WhatsApp%202025-11-11%20a%20las%2009.26.11_42ad96ff.jpg" alt="Rotomartillo">'
-    },*/
+    /* {
+         id: 1,
+         nombre: 'Armex',
+         descripcion: 'Material de construcción versátil y resistente, ideal para trabajos de albañilería y construcción. El Armex es un material esencial en cualquier proyecto de construcción, conocido por su durabilidad y versatilidad.',
+         descripcionCorta: 'Material de construcción versátil y resistente',
+         precio: 450.00,
+         stock: true,
+         imagen: '🔨'
+     },
+     {
+         id: 1,
+         nombre: 'Careta para soldar',
+         descripcion: 'Careta de soldador de alta calidad.',
+         descripcionCorta: 'Careta de soldador de alta calidad.',
+         precio: 380.00,
+         stock: true,
+         imagen: '<img src="Img/Imagen%20de%20WhatsApp%202025-11-11%20a%20las%2009.26.10_e54b7e24.jpg" alt="Careta para soldar">'
+     },
+     {
+         id: 2,
+         nombre: 'Esmeriladora',
+         descripcion: 'Esmeriladora de alta calidad, ideal para cortar, pulir y desbastar materiales metálicos. Potente motor que permite trabajos eficientes en talleres y proyectos de construcción.',
+         descripcionCorta: 'Esmeriladora de alta calidad para cortar y pulir',
+         precio: 250.00,
+         stock: true,
+         imagen: '<img src="Img/Imagen%20de%20WhatsApp%202025-11-11%20a%20las%2009.26.11_844b4aa8.jpg" alt="Esmeriladora">'
+     },
+     {
+         id: 3,
+         nombre: 'Bolsa de grapas para alambre de púas',
+         descripcion: 'Bolsa de grapas especiales para alambre de púas. Grapas de alta resistencia y durabilidad, ideales para cercas y trabajos de seguridad perimetral. Material de calidad que garantiza sujeción firme y duradera.',
+         descripcionCorta: 'Grapas especiales para alambre de púas',
+         precio: 320.00,
+         stock: true,
+         imagen: '<img src="Img/Imagen%20de%20WhatsApp%202025-11-11%20a%20las%2009.26.11_37950bca.jpg" alt="Bolsa de grapas para alambre de púas">'
+     },
+     {
+         id: 4,
+         nombre: 'Rotomartillo',
+         descripcion: 'Rotomartillo profesional de alta potencia, ideal para perforar concreto, mampostería y materiales duros. Herramienta versátil con múltiples velocidades y funciones de percusión para trabajos de construcción y remodelación.',
+         descripcionCorta: 'Rotomartillo profesional de alta potencia',
+         precio: 180.00,
+         stock: true,
+         imagen: '<img src="Img/Imagen%20de%20WhatsApp%202025-11-11%20a%20las%2009.26.11_42ad96ff.jpg" alt="Rotomartillo">'
+     },*/
     {
         id: 5,
         nombre: 'Cilindro de gas',
@@ -381,11 +381,11 @@ function initCarousel() {
 
     // Filtrar productos (sin materiales de construcción para el carousel principal)
     const productosFiltrados = productos.filter(p => p.categoria !== 'materiales-construccion');
-    
+
     // Crear tarjetas de productos (duplicadas para efecto infinito)
     // Duplicamos 3 veces para tener suficiente contenido para el efecto infinito
     const productosDuplicados = [...productosFiltrados, ...productosFiltrados, ...productosFiltrados];
-    
+
     productosDuplicados.forEach((producto) => {
         const card = document.createElement('div');
         card.className = 'producto-card';
@@ -408,7 +408,7 @@ function initCarousel() {
         const firstCard = carouselTrack.querySelector('.producto-card');
         if (firstCard) {
             const cardWidth = firstCard.offsetWidth + 20; // ancho + gap
-            
+
             // Configurar el ancho total del track
             carouselTrack.style.width = `${productosDuplicados.length * cardWidth}px`;
         }
@@ -490,7 +490,7 @@ function moveCarouselManual(direction) {
 // Auto-movimiento continuo del carousel (efecto tren)
 function startAutoCarousel() {
     stopAutoCarousel();
-    
+
     const carouselTrack = document.getElementById('carouselTrack');
     if (!carouselTrack) return;
 
@@ -551,18 +551,90 @@ function initMobileMenu() {
     const nav = document.querySelector('.nav');
 
     if (menuToggle && nav) {
-        menuToggle.addEventListener('click', () => {
+        // Remover listeners anteriores si existen (evitar duplicados)
+        const newMenuToggle = menuToggle.cloneNode(true);
+        menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
+
+        newMenuToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
             nav.classList.toggle('active');
         });
 
-        // Cerrar menú al hacer clic en un enlace
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !newMenuToggle.contains(e.target)) {
                 nav.classList.remove('active');
-            });
+            }
         });
     }
 }
+
+// Inicializar buscador
+function initSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const searchContainer = document.querySelector('.search-container');
+
+    if (searchInput && searchBtn && searchContainer) {
+        const performSearch = () => {
+            const query = searchInput.value.trim();
+            if (query) {
+                // Redirigir al catálogo con el parámetro de búsqueda
+                window.location.href = `catalogo.html?search=${encodeURIComponent(query)}`;
+            }
+        };
+
+        searchBtn.addEventListener('click', (e) => {
+            // Si está cerrado, abrirlo
+            if (!searchContainer.classList.contains('active')) {
+                e.preventDefault();
+                searchContainer.classList.add('active');
+                searchInput.focus();
+            }
+            // Si está abierto y tiene texto, buscar
+            else if (searchInput.value.trim() !== '') {
+                performSearch();
+            }
+            // Si está abierto y vacío, cerrar (opcional, o mantener abierto)
+            else {
+                e.preventDefault();
+                searchContainer.classList.remove('active');
+            }
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        // Cerrar al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (!searchContainer.contains(e.target) && searchContainer.classList.contains('active')) {
+                // Solo cerrar si el input está vacío, o siempre? Mejor siempre para UX limpia
+                if (searchInput.value.trim() === '') {
+                    searchContainer.classList.remove('active');
+                }
+            }
+        });
+    }
+}
+
+// Función para obtener parámetros de la URL
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
+
+// Inicializar componentes al cargar
+document.addEventListener('DOMContentLoaded', () => {
+    initMobileMenu();
+    initSearch();
+    actualizarContadorCarrito();
+});
 
 // Función para ver detalle del producto
 function verDetalle(productoId) {
@@ -645,10 +717,10 @@ function showMessage(mensaje, tipo) {
     const mensajeDiv = document.createElement('div');
     mensajeDiv.className = `mensaje ${tipo} mostrar`;
     mensajeDiv.textContent = mensaje;
-    
+
     const container = document.querySelector('.producto-detalle-info') || document.body;
     container.insertBefore(mensajeDiv, container.firstChild);
-    
+
     setTimeout(() => {
         mensajeDiv.remove();
     }, 3000);
@@ -805,7 +877,7 @@ function pedirKilosYAgregar(productoId) {
 // Función para enviar pedido (por ahora guarda en localStorage)
 function enviarPedido(datosCliente) {
     carritoPedidos = obtenerCarrito();
-    
+
     if (carritoPedidos.length === 0) {
         showMessage('El pedido está vacío', 'error');
         return false;

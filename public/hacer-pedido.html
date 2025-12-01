@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,15 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo">
                 <a href="index.html" title="Ir al inicio">
-                    <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png" alt="Logo Ferretería Solorza" class="logo-img">
+                    <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png"
+                        alt="Logo Ferretería Solorza" class="logo-img">
                 </a>
             </div>
             <nav class="nav">
@@ -24,6 +27,12 @@
                     <li><a href="index.html#contacto"><i class="fas fa-address-book"></i>Contacto</a></li>
                 </ul>
             </nav>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar...">
+                <button class="search-btn" id="searchBtn" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -41,7 +50,7 @@
     <section class="pedido-section">
         <div class="container">
             <h2 class="section-title">Hacer Pedido</h2>
-            
+
             <div class="pedido-container">
                 <!-- Carrito de Pedido -->
                 <div class="pedido-carrito">
@@ -58,7 +67,8 @@
                 <div class="pedido-formulario">
                     <div class="heading-row">
                         <h3>Información del Cliente</h3>
-                        <button type="button" class="facturacion-toggle" onclick="toggleFacturacion()">¿Necesitas factura?</button>
+                        <button type="button" class="facturacion-toggle" onclick="toggleFacturacion()">¿Necesitas
+                            factura?</button>
                     </div>
                     <form id="formularioPedido">
                         <div class="form-group">
@@ -79,7 +89,8 @@
                         </div>
                         <div class="form-group">
                             <label for="comentarios">Comentarios adicionales</label>
-                            <textarea id="comentarios" name="comentarios" rows="3" placeholder="Notas adicionales sobre el pedido..."></textarea>
+                            <textarea id="comentarios" name="comentarios" rows="3"
+                                placeholder="Notas adicionales sobre el pedido..."></textarea>
                         </div>
                         <button type="submit" class="btn-primary btn-enviar-pedido">
                             <i class="fas fa-paper-plane"></i> Enviar Pedido
@@ -107,11 +118,13 @@
                             </div>
                             <button type="submit" class="btn-primary">Solicitar Factura</button>
                         </form>
-                        <p class="form-nota">La factura se generará y enviará manualmente al correo indicado. Nos pondremos en contacto si se requiere información adicional.</p>
+                        <p class="form-nota">La factura se generará y enviará manualmente al correo indicado. Nos
+                            pondremos en contacto si se requiere información adicional.</p>
                     </div>
                     <p class="form-nota">
-                        <i class="fas fa-info-circle"></i> 
-                        Este pedido no procesa pago. Nos contactaremos contigo para confirmar disponibilidad y método de pago.
+                        <i class="fas fa-info-circle"></i>
+                        Este pedido no procesa pago. Nos contactaremos contigo para confirmar disponibilidad y método de
+                        pago.
                     </p>
                 </div>
             </div>
@@ -139,7 +152,8 @@
                     <h3>Contacto</h3>
                     <p class="contact-link"><i class="fab fa-whatsapp"></i> 618 154 1786</p>
                     <p><i class="fas fa-envelope"></i> info@ferreteriasolorza.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero, Durango</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero,
+                        Durango</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -252,4 +266,5 @@
         });
     </script>
 </body>
+
 </html>

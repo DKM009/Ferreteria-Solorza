@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,15 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo">
                 <a href="index.html" title="Ir al inicio">
-                    <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png" alt="Logo Ferretería Solorza" class="logo-img">
+                    <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png"
+                        alt="Logo Ferretería Solorza" class="logo-img">
                 </a>
             </div>
             <nav class="nav">
@@ -24,6 +27,12 @@
                     <li><a href="index.html#contacto"><i class="fas fa-address-book"></i>Contacto</a></li>
                 </ul>
             </nav>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar...">
+                <button class="search-btn" id="searchBtn" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -42,34 +51,34 @@
         <div class="container">
             <h2 class="section-title">Todos los Productos</h2>
             <p class="section-subtitle">Herramientas y accesorios para construcción y reparación</p>
-            
-            <div class="categoria-buttons" id="categoriaButtons" style="text-align:center; margin-bottom:20px; display:flex; gap:10px; justify-content:center;">
-                <button class="btn-secondary" data-cat="all"><i class="fas fa-th-large"></i> Todos</button>
-                <button class="btn-secondary" data-cat="herramientas"><i class="fas fa-tools"></i> Herramientas</button>
-            </div>
 
             <!-- Sección Por Marca -->
             <div style="margin-bottom:30px;">
                 <h3 style="text-align:center; margin-bottom:15px; color:#333;">Filtrar por Marca</h3>
-                <div class="marca-buttons" id="marcaButtons" style="text-align:center; display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
-                    <button class="" data-marca="truper" style="display:flex; align-items:center; gap:8px; padding:10px 20px; border:2px solid #ddd; border-radius:5px; background:#fff; cursor:pointer; transition:all 0.3s;">
+                <div class="marca-buttons" id="marcaButtons"
+                    style="text-align:center; display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+                    <button class="btn-marca" data-marca="truper"
+                        style="display:flex; align-items:center; gap:8px; padding:10px 20px; border:2px solid #ddd; border-radius:5px; background:#fff; cursor:pointer; transition:all 0.3s;">
                         <img src="Img/Categorias/TRUPER.svg" alt="Truper" style="height:30px;">
                         <span></span>
                     </button>
-                    <button class="btn-marca" data-marca="pretul" style="display:flex; align-items:center; gap:8px; padding:10px 20px; border:2px solid #ddd; border-radius:5px; background:#fff; cursor:pointer; transition:all 0.3s;">
+                    <button class="btn-marca" data-marca="pretul"
+                        style="display:flex; align-items:center; gap:8px; padding:10px 20px; border:2px solid #ddd; border-radius:5px; background:#fff; cursor:pointer; transition:all 0.3s;">
                         <img src="Img/Categorias/PRETUL.svg" alt="Pretul" style="height:30px;">
                         <span></span>
                     </button>
-                    <button class="btn-marca" data-marca="foset" style="display:flex; align-items:center; gap:8px; padding:10px 20px; border:2px solid #ddd; border-radius:5px; background:#fff; cursor:pointer; transition:all 0.3s;">
+                    <button class="btn-marca" data-marca="foset"
+                        style="display:flex; align-items:center; gap:8px; padding:10px 20px; border:2px solid #ddd; border-radius:5px; background:#fff; cursor:pointer; transition:all 0.3s;">
                         <img src="Img/Categorias/FOSET.svg" alt="Foset" style="height:30px;">
                         <span></span>
                     </button>
-                    <button class="btn-marca" data-marca="cemex" style="display:flex; align-items:center; gap:8px; padding:10px 20px; border:2px solid #ddd; border-radius:5px; background:#fff; cursor:pointer; transition:all 0.3s;">
+                    <button class="btn-marca" data-marca="cemex"
+                        style="display:flex; align-items:center; gap:8px; padding:10px 20px; border:2px solid #ddd; border-radius:5px; background:#fff; cursor:pointer; transition:all 0.3s;">
                         <img src="Img/Categorias/cemex.png" alt="Cemex" style="height:30px;">
                         <span></span>
                     </button>
                 </div>
-            </div> 
+            </div>
 
             <div class="catalogo-grid" id="catalogoGrid">
                 <!-- Los productos se cargarán dinámicamente -->
@@ -82,7 +91,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                        <h3><a href="index.html" class="brand-link">Ferretería Solorza</a></h3>
+                    <h3><a href="index.html" class="brand-link">Ferretería Solorza</a></h3>
                     <p>Todo para tu construcción y reparación</p>
                 </div>
                 <div class="footer-section">
@@ -95,10 +104,11 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                        <h3>Contacto</h3>
-                        <p class="contact-link"><i class="fab fa-whatsapp"></i> 618 154 1786</p>
+                    <h3>Contacto</h3>
+                    <p class="contact-link"><i class="fab fa-whatsapp"></i> 618 154 1786</p>
                     <p><i class="fas fa-envelope"></i> info@ferreteriasolorza.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero, Durango</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero,
+                        Durango</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -112,23 +122,30 @@
         // Cargar productos del catálogo y manejar botones de categoría
         document.addEventListener('DOMContentLoaded', () => {
             const allProducts = productos || [];
-            // Mostrar todos por defecto
-            renderizarProductos(allProducts, 'catalogoGrid');
-            actualizarContadorCarrito();
-            initMobileMenu();
 
-            // Configurar botones de categoría
-            const botones = document.querySelectorAll('#categoriaButtons button');
-            botones.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const cat = btn.dataset.cat;
-                    if (cat === 'all') {
-                        renderizarProductos(allProducts, 'catalogoGrid');
-                    } else {
-                        renderizarProductos(filtrarProductosPorCategoria(cat), 'catalogoGrid');
-                    }
+            // Verificar si hay búsqueda
+            const searchQuery = getUrlParameter('search');
+
+            if (searchQuery) {
+                // Filtrar por búsqueda
+                const searchTerms = searchQuery.toLowerCase().split(' ');
+                const filteredProducts = allProducts.filter(product => {
+                    const matchName = product.nombre.toLowerCase().includes(searchQuery.toLowerCase());
+                    const matchDesc = product.descripcion.toLowerCase().includes(searchQuery.toLowerCase());
+                    return matchName || matchDesc;
                 });
-            });
+
+                renderizarProductos(filteredProducts, 'catalogoGrid');
+
+                // Mostrar mensaje de resultados
+                const title = document.querySelector('.section-title');
+                if (title) {
+                    title.textContent = `Resultados para: "${searchQuery}"`;
+                }
+            } else {
+                // Mostrar todos por defecto
+                renderizarProductos(allProducts, 'catalogoGrid');
+            }
 
             // Configurar botones de marca
             const botonesMarc = document.querySelectorAll('#marcaButtons button.btn-marca');
@@ -137,7 +154,7 @@
                     const marca = btn.dataset.marca;
                     const productosFiltrados = filtrarProductosPorMarca(marca);
                     renderizarProductos(productosFiltrados, 'catalogoGrid');
-                    
+
                     // Actualizar estilo del botón seleccionado
                     botonesMarc.forEach(b => {
                         b.style.borderColor = '#ddd';
@@ -150,4 +167,5 @@
         });
     </script>
 </body>
+
 </html>

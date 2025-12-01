@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,15 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo">
                 <a href="index.html" title="Ir al inicio">
-                    <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png" alt="Logo Ferretería Solorza" class="logo-img">
+                    <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png"
+                        alt="Logo Ferretería Solorza" class="logo-img">
                 </a>
                 <h1><a href="index.html" class="brand-link" title="Ir al inicio">Ferretería Solorza</a></h1>
             </div>
@@ -26,6 +29,12 @@
                     <li><a href="#contacto"><i class="fas fa-address-book"></i>Contacto</a></li>
                 </ul>
             </nav>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar...">
+                <button class="search-btn" id="searchBtn" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -50,32 +59,33 @@
 
     <!-- Carousel de Productos -->
     <section id="productos" class="productos-section">
-  <div class="container">
-    <h2 class="section-title">Nuestros Productos</h2>
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
 
-    <div class="carousel-container">
-      <button class="carousel-btn prev" id="prevBtn">
-        <i class="fas fa-chevron-left"></i>
-      </button>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
 
-      <div class="carousel-track-container">
-        <div class="carousel-track" id="carouselTrack">
-          <!-- Los productos se agregarán dinámicamente con JavaScript -->
+                <div class="carousel-track-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Los productos se agregarán dinámicamente con JavaScript -->
+                    </div>
+                </div>
+
+                <button class="carousel-btn next" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="view-all">
+                <a href="catalogo.html" class="btn-secondary">Ver Todos los Productos</a>
+
+                <a href="hacer-pedido.html" class="btn-primary" style="margin-left: 15px;"><i
+                        class="fas fa-shopping-cart"></i> Hacer Pedido</a>
+            </div>
         </div>
-      </div>
-
-      <button class="carousel-btn next" id="nextBtn">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-    </div>
-
-    <div class="view-all">
-      <a href="catalogo.html" class="btn-secondary">Ver Todos los Productos</a>
-      
-      <a href="hacer-pedido.html" class="btn-primary" style="margin-left: 15px;"><i class="fas fa-shopping-cart"></i> Hacer Pedido</a>
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- Promociones -->
@@ -105,16 +115,20 @@
                     <img src="Img/ImgConstruccion/MaterialConstrucionPvc.jpg" alt="PVC - Material de construcción">
                 </div>
                 <div class="material-card" style="cursor: pointer;" onclick="verDetalle(25)">
-                    <img src="Img/ImgConstruccion/MaterialConstrucionBarilla.png" alt="Armex - Material de construcción">
+                    <img src="Img/ImgConstruccion/MaterialConstrucionBarilla.png"
+                        alt="Armex - Material de construcción">
                 </div>
                 <div class="material-card" style="cursor: pointer;" onclick="verDetalle(26)">
-                    <img src="Img/ImgConstruccion/MateriConstruccionMorteroCemex.png" alt="Varilla Corrugada - Material de construcción">
+                    <img src="Img/ImgConstruccion/MateriConstruccionMorteroCemex.png"
+                        alt="Varilla Corrugada - Material de construcción">
                 </div>
                 <div class="material-card" style="cursor: pointer;" onclick="verDetalle(27)">
-                    <img src="Img/ImgConstruccion/MaterialConstrucionCementoCemex.jpg" alt="Cal - Material de construcción">
+                    <img src="Img/ImgConstruccion/MaterialConstrucionCementoCemex.jpg"
+                        alt="Cal - Material de construcción">
                 </div>
                 <div class="material-card" style="cursor: pointer;" onclick="verDetalle(29)">
-                    <img src="Img/ImgConstruccion/MaterialConstrucionMultiplastCemex.png" alt="Cemento Blanco - Material de construcción">
+                    <img src="Img/ImgConstruccion/MaterialConstrucionMultiplastCemex.png"
+                        alt="Cemento Blanco - Material de construcción">
                 </div>
                 <div class="material-card" style="cursor: pointer;" onclick="verDetalle(30)">
                     <img src="Img/ProductosIMG/fosetMescladora.png" alt="Mescladora Foset - Material de construcción">
@@ -129,8 +143,11 @@
             <h2 class="section-title">Sobre Nosotros</h2>
             <div class="nosotros-content">
                 <div class="nosotros-text">
-                    <p>Ferretería Solorza es una empresa dedicada a ofrecer productos de ferretería en general, incluyendo herramientas, materiales de construcción y todo lo necesario para tus proyectos.</p>
-                    <p>Nos especializamos en brindar calidad y servicio a nuestros clientes, ofreciendo una amplia variedad de productos para satisfacer todas sus necesidades de construcción y reparación 25 años de experiencia en el rubro.</p>
+                    <p>Ferretería Solorza es una empresa dedicada a ofrecer productos de ferretería en general,
+                        incluyendo herramientas, materiales de construcción y todo lo necesario para tus proyectos.</p>
+                    <p>Nos especializamos en brindar calidad y servicio a nuestros clientes, ofreciendo una amplia
+                        variedad de productos para satisfacer todas sus necesidades de construcción y reparación 25 años
+                        de experiencia en el rubro.</p>
                 </div>
                 <div class="nosotros-info">
                     <div class="info-card">
@@ -141,7 +158,8 @@
                     <div class="info-card">
                         <i class="fab fa-whatsapp"></i>
                         <h3>WhatsApp</h3>
-                        <p><a href="https://wa.me/5216181541786" target="_blank" rel="noopener noreferrer">618 154 1786</a></p>
+                        <p><a href="https://wa.me/5216181541786" target="_blank" rel="noopener noreferrer">618 154
+                                1786</a></p>
                     </div>
                     <div class="info-card">
                         <i class="fas fa-envelope"></i>
@@ -173,13 +191,9 @@
                         <span>Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero, Durango</span>
                     </div>
                     <div class="map-container">
-                        <iframe 
+                        <iframe
                             src="https://www.google.com/maps/embed?pb=!4v1762874138358!6m8!1m7!1sVntJxEQm7fYUi4D5uj1I7g!2m2!1d23.72705085673979!2d-103.9810487939393!3f142.40510776138296!4f0.9515165712242322!5f0.7820865974627469"
-                            width="100%" 
-                            height="300" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy">
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
                         </iframe>
                     </div>
                 </div>
@@ -209,7 +223,8 @@
                     <h3>Contacto</h3>
                     <p class="contact-link"><i class="fab fa-whatsapp"></i> 618 154 1786</p>
                     <p><i class="fas fa-envelope"></i> info@ferreteriasolorza.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero, Durango</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero,
+                        Durango</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -219,7 +234,8 @@
     </footer>
 
     <!-- Botón de Soporte Flotante -->
-     <a href="https://wa.me/5216181541786" class="support-btn" title="Enviar mensaje por WhatsApp" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/5216181541786" class="support-btn" title="Enviar mensaje por WhatsApp" target="_blank"
+        rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -231,4 +247,5 @@
         });
     </script>
 </body>
-</html> 
+
+</html>

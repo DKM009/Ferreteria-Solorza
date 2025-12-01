@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,15 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo">
                 <a href="index.html" title="Ir al inicio">
-                    <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png" alt="Logo Ferretería Solorza" class="logo-img">
+                    <img src="Img\Logo\Imagen_de_WhatsApp_2025-11-21_a_las_07.47.37_cfd71c0c-removebg-preview.png"
+                        alt="Logo Ferretería Solorza" class="logo-img">
                 </a>
             </div>
             <nav class="nav">
@@ -24,6 +27,12 @@
                     <li><a href="index.html#contacto"><i class="fas fa-address-book"></i>Contacto</a></li>
                 </ul>
             </nav>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Buscar...">
+                <button class="search-btn" id="searchBtn" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -67,7 +76,8 @@
                     <h3>Contacto</h3>
                     <p class="contact-link"><i class="fab fa-whatsapp"></i> 618 154 1786</p>
                     <p><i class="fas fa-envelope"></i> info@ferreteriasolorza.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero, Durango</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Calle 5 de Febrero, Zona Centro<br>Vicente Guerrero,
+                        Durango</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -82,14 +92,14 @@
         document.addEventListener('DOMContentLoaded', () => {
             const productoId = localStorage.getItem('productoSeleccionado');
             const contenedor = document.getElementById('productoDetalle');
-            
+
             if (!productoId) {
                 contenedor.innerHTML = '<div class="loading"><p>No se ha seleccionado ningún producto. <a href="catalogo.html">Ver catálogo</a></p></div>';
                 return;
             }
 
             const producto = obtenerProductoPorId(parseInt(productoId));
-            
+
             if (!producto) {
                 contenedor.innerHTML = '<div class="loading"><p>Producto no encontrado. <a href="catalogo.html">Ver catálogo</a></p></div>';
                 return;
@@ -138,4 +148,5 @@
         });
     </script>
 </body>
+
 </html>
